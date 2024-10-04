@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/pantpart.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="img/icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+    <title>Participante</title>
+</head>
+<body>
+    <img id="titulo1" src="img/titulo1.png" alt="">
+    <div id="conen">
+        <img id="nubecita" src="img/nube.png" alt="" height="400px">
+        <span id="participante"></span>
+    </div>
+    <div id="bajo">
+        <div id="boton">
+            <a href="pantpre.html">
+                <img src="img/bnube.png" alt="" height="100px">
+            </a>
+        </div> 
+    </div>
+    <script>
+        var participantes = JSON.parse(localStorage.getItem("Participantes"));
+        i = 0;
+        e = 0;
+        let partactual = participantes[i].numpart;
+        document.getElementById("participante").innerText = partactual;
+        localStorage.setItem("Posicion Arreglo Participantes", JSON.stringify(i));
+        localStorage.setItem("Posicion Arreglo Preguntas", JSON.stringify(e));
+        //let partactual = participantes.numpart[i];
+    </script>
+</body>
+</html>

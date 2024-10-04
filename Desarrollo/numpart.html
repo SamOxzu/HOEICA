@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/numpart.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="img/icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+    <title>Número de Participantes</title>
+</head>
+<body>
+    <div id="nump">
+        <div id="conen">
+            <img src="img/num.png" alt="">
+            <input placeholder="INGRESE NUMERO" type="number" name="" id="coso" class="encima">
+        </div>
+    </div>
+    <div class="cont-der">
+        <a href="index.html"><img src="img/fle.png"></a>
+        <button id="mandao" type="button">
+            <a href="pantpart.html">
+                <input type="image" src="img/coninuar1.png" height="80" width="210">
+            </a>
+        </button>
+    </div>
+    <script>
+        totalparticipantes = 0
+        var participantes = []
+        document.getElementById("mandao").onclick = numeroparticipantes;
+        function numeroparticipantes() {
+            let totalparticipantes = document.getElementById("coso").value;
+            for (let i = 1; i <= totalparticipantes; i++) {
+                var objeto = {
+                    numpart: i,
+                    puntuacion: 0
+                }
+                participantes.push(objeto)
+            }
+            localStorage.setItem("Total de Participantes", JSON.stringify(totalparticipantes));
+            localStorage.setItem("Participantes", JSON.stringify(participantes));
+        }
+        
+        console.log(totalparticipantes);
+        
+    </script>
+</body>
+</html>

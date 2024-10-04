@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/pantpre.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="img/icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,400&display=swap" rel="stylesheet">
+    <title>Número de Participantes</title>
+</head>
+<body>
+    <div id="container">
+        <div id="arriba">
+            <div id="barra"></div>
+        </div>
+    </div>
+    <div id="container-m">
+        <img src="img/pre.png" alt="" srcset="" width="900px" id="enun-fondo">
+        <span id="pregunta"></span>
+    </div>
+    <div id="container-mb">
+        <button id="btnA">
+            <div class="botonres">
+                <img src="img/RA.png" alt="" srcset="" class="fonres" id="fonresA">
+                <span id="contresA">Acá va la respuesta A</span>
+            </div>
+        </button>
+        <button id="btnB">
+            <div class="botonres">
+                <img src="img/RB.png" alt="" srcset="" class="fonres" id="fonresB">
+                <span id="contresB">Acá va la respuesta B</span>
+            </div>
+        </button>
+        <button id="btnC">
+            <div class="botonres">
+                <img src="img/RC.png" alt="" srcset="" class="fonres" id="fonresC">
+                <span id="contresC">Acá va la respuesta C</span>
+            </div>
+        </button>
+        <button id="btnD">
+            <div class="botonres">
+                <img src="img/RD.png" alt="" srcset="" class="fonres" id="fonresD">
+                <span id="contresD">Acá va la respuesta D</span>
+            </div>
+        </button>
+    </div>
+    <div id="container-b">
+        <button id="btnsig">
+            <a id="linkpasar" href="pantpart2.html">
+                <img src="img/fled.png" alt="" srcset="" height="80px" id="imgpasar">
+            </a>
+        </button>
+    </div>
+    <script>
+        var pospart = JSON.parse(localStorage.getItem("Posicion Arreglo Participantes"));
+        var maxpart = JSON.parse(localStorage.getItem("Total de Participantes"));
+        var preact = JSON.parse(localStorage.getItem("Posicion Arreglo Preguntas"));
+        var maxpre = JSON.parse(localStorage.getItem("Total de Preguntas"));
+        var preguntas = JSON.parse(localStorage.getItem("Preguntas"));
+        var probabilidades = ["Correcta","Incorrecta1","Incorrecta2","Incorrecta3"]
+        let enunciadoactual = preguntas[preact].enunciado;
+        var start = new Date().getTime();
+        var estado = "Sin Responder"
+        localStorage.setItem("Estado", JSON.stringify(estado));
+        localStorage.setItem("Tiempo de Inicio", JSON.stringify(start));
+
+        // console.time("");
+        
+
+        let rdm1 = Math.floor(Math.random()*probabilidades.length)
+        let asiga = probabilidades[rdm1]
+        probabilidades.splice(rdm1,1)
+        
+        let rdm2 = Math.floor(Math.random()*probabilidades.length)
+        let asigb = probabilidades[rdm2]
+        probabilidades.splice(rdm2,1)
+        
+        let rdm3 = Math.floor(Math.random()*probabilidades.length)
+        let asigc = probabilidades[rdm3]
+        probabilidades.splice(rdm3,1)
+        
+        let rdm4 = Math.floor(Math.random()*probabilidades.length)
+        let asigd = probabilidades[rdm4]
+        probabilidades.splice(rdm4,1)
+
+        console.log(asiga)
+        console.log(asigb)
+        console.log(asigc)
+        console.log(asigd)
+        
+        opcor = preguntas[preact].opcorrect
+        opinc1 = preguntas[preact].opequiv1
+        opinc2 = preguntas[preact].opequiv2
+        opinc3 = preguntas[preact].opequiv3
+        
+        localStorage.setItem("Respuesta Correcta Actual", JSON.stringify(opcor));
+
+        switch (asiga) {
+            case "Correcta":
+                document.getElementById("contresA").innerText = opcor
+                break;
+            case "Incorrecta1":
+                document.getElementById("contresA").innerText = opinc1
+                break;
+            case "Incorrecta2":
+                document.getElementById("contresA").innerText = opinc2
+                break;
+            case "Incorrecta3":
+                document.getElementById("contresA").innerText = opinc3
+                break;
+        }
+
+        switch (asigb) {
+            case "Correcta":
+                document.getElementById("contresB").innerText = opcor
+                break;
+            case "Incorrecta1":
+                document.getElementById("contresB").innerText = opinc1
+                break;
+            case "Incorrecta2":
+                document.getElementById("contresB").innerText = opinc2
+                break;
+            case "Incorrecta3":
+                document.getElementById("contresB").innerText = opinc3
+                break;
+        }
+
+        switch (asigc) {
+            case "Correcta":
+                document.getElementById("contresC").innerText = opcor
+                break;
+            case "Incorrecta1":
+                document.getElementById("contresC").innerText = opinc1
+                break;
+            case "Incorrecta2":
+                document.getElementById("contresC").innerText = opinc2
+                break;
+            case "Incorrecta3":
+                document.getElementById("contresC").innerText = opinc3
+                break;
+        }
+
+        switch (asigd) {
+            case "Correcta":
+                document.getElementById("contresD").innerText = opcor
+                break;
+            case "Incorrecta1":
+                document.getElementById("contresD").innerText = opinc1
+                break;
+            case "Incorrecta2":
+                document.getElementById("contresD").innerText = opinc2
+                break;
+            case "Incorrecta3":
+                document.getElementById("contresD").innerText = opinc3
+                break;
+        }
+
+        document.getElementById("btnA").addEventListener("click",buttonA)
+        document.getElementById("btnB").addEventListener("click",buttonB)
+        document.getElementById("btnC").addEventListener("click",buttonC)
+        document.getElementById("btnD").addEventListener("click",buttonD)
+        
+        function buttonA(){
+            var contenidoA = document.getElementById("contresA").innerText
+            var totpart = JSON.parse(localStorage.getItem("Total de Participantes"));
+            var correcta = JSON.parse(localStorage.getItem("Respuesta Correcta Actual"));
+            var pospart = JSON.parse(localStorage.getItem("Posicion Arreglo Participantes"));
+            var pregact = JSON.parse(localStorage.getItem("Posicion Arreglo Preguntas"));
+            var part = JSON.parse(localStorage.getItem("Participantes"));
+            var startt = JSON.parse(localStorage.getItem("Tiempo de Inicio"));
+            var preg = JSON.parse(localStorage.getItem("Preguntas"));
+            var end = new Date().getTime();
+            var time = end - startt;
+            var estado = "Respondida"
+            console.log(time)
+
+            if(contenidoA == correcta){
+                if(preg.length == 1){
+                    document.getElementById("linkpasar").href = "finalistas.html"
+                    document.getElementById("imgpasar").src = "img/finalizar.png"
+                    document.getElementById("imgpasar").style.height = "50px"
+                    document.getElementById("imgpasar").style.width = "auto"
+                }
+                document.getElementById("fonresA").src = "img/VA.png"
+                part[pospart].puntuacion = (part[pospart].puntuacion + ((60000-time)/60))
+                preg.splice(pregact,1)
+                var estado = "Respondida Correctamente"
+            }
+            else{
+                document.getElementById("fonresA").src = "img/FA.png"
+                var estado = "Respondida Incorrectamente"
+            }
+            document.getElementById("btnA").disabled = true
+            document.getElementById("btnB").disabled = true
+            document.getElementById("btnC").disabled = true
+            document.getElementById("btnD").disabled = true
+            document.getElementById("barra").style.webkitAnimationPlayState = "paused";
+            clearTimeout(demorao);
+            
+            totpreg = preg.length
+            localStorage.setItem("Total de Preguntas", JSON.stringify(totpreg));
+            localStorage.setItem("Participantes", JSON.stringify(part));
+            localStorage.setItem("Preguntas", JSON.stringify(preg));
+            localStorage.setItem("Estado", JSON.stringify(estado));
+        }
+
+        function buttonB(){
+            var contenidoB = document.getElementById("contresB").innerText
+            var totpart = JSON.parse(localStorage.getItem("Total de Participantes"));
+            var correcta = JSON.parse(localStorage.getItem("Respuesta Correcta Actual"));
+            var pospart = JSON.parse(localStorage.getItem("Posicion Arreglo Participantes"));
+            var pregact = JSON.parse(localStorage.getItem("Posicion Arreglo Preguntas"));
+            var part = JSON.parse(localStorage.getItem("Participantes"));
+            var startt = JSON.parse(localStorage.getItem("Tiempo de Inicio"));
+            var preg = JSON.parse(localStorage.getItem("Preguntas"));
+            var end = new Date().getTime();
+            var time = end - startt;
+            var estado = "Respondida"
+            console.log(time)
+
+            if(contenidoB == correcta){
+                if(preg.length == 1){
+                    document.getElementById("linkpasar").href = "finalistas.html"
+                    document.getElementById("imgpasar").src = "img/finalizar.png"
+                    document.getElementById("imgpasar").style.height = "50px"
+                    document.getElementById("imgpasar").style.width = "auto"
+                }
+                document.getElementById("fonresB").src = "img/VB.png"
+                part[pospart].puntuacion = (part[pospart].puntuacion + ((60000-time)/60))
+                preg.splice(pregact,1)
+                var estado = "Respondida Correctamente"
+            }
+            else{
+                document.getElementById("fonresB").src = "img/FB.png"
+                var estado = "Respondida Incorrectamente"
+            }
+            document.getElementById("btnA").disabled = true
+            document.getElementById("btnB").disabled = true
+            document.getElementById("btnC").disabled = true
+            document.getElementById("btnD").disabled = true
+            document.getElementById("barra").style.webkitAnimationPlayState = "paused";
+            clearTimeout(demorao);
+            
+            totpreg = preg.length
+            localStorage.setItem("Total de Preguntas", JSON.stringify(totpreg));
+            localStorage.setItem("Participantes", JSON.stringify(part));
+            localStorage.setItem("Preguntas", JSON.stringify(preg));
+            localStorage.setItem("Estado", JSON.stringify(estado));
+        }
+
+        function buttonC(){
+            var contenidoC = document.getElementById("contresC").innerText
+            var totpart = JSON.parse(localStorage.getItem("Total de Participantes"));
+            var correcta = JSON.parse(localStorage.getItem("Respuesta Correcta Actual"));
+            var pospart = JSON.parse(localStorage.getItem("Posicion Arreglo Participantes"));
+            var pregact = JSON.parse(localStorage.getItem("Posicion Arreglo Preguntas"));
+            var part = JSON.parse(localStorage.getItem("Participantes"));
+            var startt = JSON.parse(localStorage.getItem("Tiempo de Inicio"));
+            var preg = JSON.parse(localStorage.getItem("Preguntas"));
+            var end = new Date().getTime();
+            var time = end - startt;
+            var estado = "Respondida"
+            console.log(time)
+
+            if(contenidoC == correcta){
+                if(preg.length == 1){
+                    document.getElementById("linkpasar").href = "finalistas.html"
+                    document.getElementById("imgpasar").src = "img/finalizar.png"
+                    document.getElementById("imgpasar").style.height = "50px"
+                    document.getElementById("imgpasar").style.width = "auto"
+                }
+                document.getElementById("fonresC").src = "img/VC.png"
+                part[pospart].puntuacion = (part[pospart].puntuacion + ((60000-time)/60))
+                preg.splice(pregact,1)
+                var estado = "Respondida Correctamente"
+            }
+            else{
+                document.getElementById("fonresC").src = "img/FC.png"
+                var estado = "Respondida Incorrectamente"
+            }
+            document.getElementById("btnA").disabled = true
+            document.getElementById("btnB").disabled = true
+            document.getElementById("btnC").disabled = true
+            document.getElementById("btnD").disabled = true
+            document.getElementById("barra").style.webkitAnimationPlayState = "paused";
+            clearTimeout(demorao);
+            
+            totpreg = preg.length
+            localStorage.setItem("Total de Preguntas", JSON.stringify(totpreg));
+            localStorage.setItem("Participantes", JSON.stringify(part));
+            localStorage.setItem("Preguntas", JSON.stringify(preg));
+            localStorage.setItem("Estado", JSON.stringify(estado));
+        }
+
+        function buttonD(){
+            var contenidoD = document.getElementById("contresD").innerText
+            var totpart = JSON.parse(localStorage.getItem("Total de Participantes"));
+            var correcta = JSON.parse(localStorage.getItem("Respuesta Correcta Actual"));
+            var pospart = JSON.parse(localStorage.getItem("Posicion Arreglo Participantes"));
+            var pregact = JSON.parse(localStorage.getItem("Posicion Arreglo Preguntas"));
+            var part = JSON.parse(localStorage.getItem("Participantes"));
+            var startt = JSON.parse(localStorage.getItem("Tiempo de Inicio"));
+            var preg = JSON.parse(localStorage.getItem("Preguntas"));
+            var end = new Date().getTime();
+            var time = end - startt;
+            var estado = "Respondida"
+            console.log(time)
+
+            if(contenidoD == correcta){
+                if(preg.length == 1){
+                    document.getElementById("linkpasar").href = "finalistas.html"
+                    document.getElementById("imgpasar").src = "img/finalizar.png"
+                    document.getElementById("imgpasar").style.height = "50px"
+                    document.getElementById("imgpasar").style.width = "auto"
+                }
+                document.getElementById("fonresD").src = "img/VD.png"
+                part[pospart].puntuacion = (part[pospart].puntuacion + ((60000-time)/60))
+                preg.splice(pregact,1)
+                var estado = "Respondida Correctamente"
+            }
+            else{
+                document.getElementById("fonresD").src = "img/FD.png"
+                var estado = "Respondida Incorrectamente"
+            }
+            document.getElementById("btnA").disabled = true
+            document.getElementById("btnB").disabled = true
+            document.getElementById("btnC").disabled = true
+            document.getElementById("btnD").disabled = true
+            document.getElementById("barra").style.webkitAnimationPlayState = "paused";
+            clearTimeout(demorao);
+            
+            totpreg = preg.length
+            localStorage.setItem("Total de Preguntas", JSON.stringify(totpreg));
+            localStorage.setItem("Participantes", JSON.stringify(part));
+            localStorage.setItem("Preguntas", JSON.stringify(preg));
+            localStorage.setItem("Estado", JSON.stringify(estado));
+        }
+
+        const demorao = setTimeout(() => {
+            var estado = JSON.parse(localStorage.getItem("Estado"));
+            if(estado = "Sin Responder"){
+                document.getElementById("enun-fondo").src = "img/preF.png"
+                document.getElementById("btnA").disabled = true
+                document.getElementById("btnB").disabled = true
+                document.getElementById("btnC").disabled = true
+                document.getElementById("btnD").disabled = true 
+            }
+        }, 60000);
+
+        document.getElementById("pregunta").innerText = enunciadoactual;
+
+        document.getElementById("btnsig").onclick = sumarparticipante;
+
+        function sumarparticipante() {
+            var i = JSON.parse(localStorage.getItem("Posicion Arreglo Participantes"));
+            var e = JSON.parse(localStorage.getItem("Total de Participantes"));
+            var o = JSON.parse(localStorage.getItem("Posicion Arreglo Preguntas"));
+            var u = JSON.parse(localStorage.getItem("Total de Preguntas"));
+            var estado = JSON.parse(localStorage.getItem("Estado"));
+            if (estado == "Respondida Correctamente") {
+                if(i < e-1){
+                    i = i + 1;
+                }
+                else{
+                    i = 0;
+                }
+                if (o == u) {
+                    o = 0;
+                }
+            }
+            else{
+                if(i < e-1){
+                    i = i + 1;
+                }
+                else{
+                    i = 0;
+                }
+
+                if(u == 1){
+                    o = 0;
+                }
+                else{
+                    if(o < u-1){
+                        o = o+1;
+                        if (o == u) {
+                            o = 0;
+                        }
+                    }
+                    else{
+                        o = 0;
+                    }
+                }
+            }
+            localStorage.setItem("Posicion Arreglo Participantes", JSON.stringify(i));
+            localStorage.setItem("Posicion Arreglo Preguntas", JSON.stringify(o));
+        }
+        console.log(pospart)
+    </script>
+</body>
+</html>

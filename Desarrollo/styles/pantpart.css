@@ -1,0 +1,49 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: url(../img/f10.png);   
+    background-size: 100%;
+    align-items: center;
+}
+
+#conen{
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+}
+
+#titulo1{
+    margin-left: 25%;
+    margin-top: 2%;
+    width: 50%;
+}
+
+#nubecita{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -2%;
+    position: relative;
+    display: block;
+}
+
+#participante{
+    position: absolute;
+    text-align: center;
+    height: 25%;
+    width: 50%;
+    font-size: 1000%;
+    left: 25%;
+    top: 17%;
+    font-family:'Ultra', serif;
+}
+
+#bajo{
+    width: 100%;
+}
+
+#boton{
+    margin-left: 85%;
+}

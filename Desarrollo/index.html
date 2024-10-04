@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/index.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="img/icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Russo+One&display=swap" rel="stylesheet">
+    <title>Inicio</title>
+</head>
+<body>
+    <div id="logo">
+        <img src="img/lg.png">
+    </div>
+    <div class="cont-btn">
+        <a href="temas.html"><button class="btn1">TEMAS</button></a>
+        <a href="numpart.html"><button class="btn1">EMPEZAR</button></a>
+        <a href="tuto.html"><button class="btn1">TUTORIAL</button></a>
+    </div>
+    <footer class="cred">
+        Desarrollado por Mosquera V. y Gutiérrez S.
+    </footer>
+    <script>
+        preguntas = [
+            {
+                enunciado : "¿Qué entiendes por la estructura del estado?",
+                opcorrect : "La distribución del poder del estado",
+                opequiv1 : "Agrupación de personas políticas",
+                opequiv2 : "La encargada de la justicia",
+                opequiv3 : "En donde se crean las leyes" 
+            },
+            {
+                enunciado : "¿Cuáles son las ramas del poder público?",
+                opcorrect : "Ejecutiva, Legislativa y Judicial",
+                opequiv1 : "Ejecutiva, Legislativa y Estrúctural",
+                opequiv2 : "Ejecuto, Legal y Juez",
+                opequiv3 : "Corte Suprema y Corte Constitucional" 
+            },
+            {
+                enunciado : "¿Cómo se llama la norma suprema en Colombia?",
+                opcorrect : "Constitución Política de 1991",
+                opequiv1 : "Ramas del Poder Público",
+                opequiv2 : "Rama Judicial",
+                opequiv3 : "Ley de Justicia" 
+            },
+            {
+                enunciado : "¿Qué hace la rama judicial?",
+                opcorrect : "Sanciona el incumplimiento de las leyes",
+                opequiv1 : "Ejecutar las leyes",
+                opequiv2 : "Hace normas",
+                opequiv3 : "Estructura el país" 
+            },
+            {
+                enunciado : "¿Qué hace la rama legislativa?",
+                opcorrect : "Crea las leyes",
+                opequiv1 : "Castiga el que incumple la ley",
+                opequiv2 : "Administra el poder",
+                opequiv3 : "Mejorar la salud de las personas" 
+            },
+            {
+                enunciado : "¿Qué hace la rama ejecutiva?",
+                opcorrect : "Ejecuta las leyes",
+                opequiv1 : "Ejecuta la justicia",
+                opequiv2 : "Encargado de la justicia",
+                opequiv3 : "Agrega normas" 
+            },
+            {
+                enunciado : "¿Qué es la justicia?",
+                opcorrect : "Valores basados en la verdad",
+                opequiv1 : "Rama judicial",
+                opequiv2 : "Corte Suprema",
+                opequiv3 : "Es un juez" 
+            },
+            {
+                enunciado : "Son organismo de control, excepto",
+                opcorrect : "Jueces",
+                opequiv1 : "Defensoría del Pueblo",
+                opequiv2 : "Procuraduría General de la Nación",
+                opequiv3 : "Contraloría General" 
+            },
+            {
+                enunciado : "El Consejo Superior de la Judicatura pertenece a la rama:",
+                opcorrect : "Judicial",
+                opequiv1 : "Ejecutiva",
+                opequiv2 : "Legislativa",
+                opequiv3 : "No pertenece a ninguna rama" 
+            },
+            {
+                enunciado : "Conforma la Organización Electoral",
+                opcorrect : "Consejo Nacional Electoral",
+                opequiv1 : "Fiscalía General de la Nación",
+                opequiv2 : "Ramas del Poder Público",
+                opequiv3 : "Constitución Política" 
+            },
+            {
+                enunciado : "¿Cuál es la rama que aplica las leyes?",
+                opcorrect : "Ejecutiva",
+                opequiv1 : "Legislativa",
+                opequiv2 : "Judicial",
+                opequiv3 : "Electoral" 
+            },
+            {
+                enunciado : "En la Rama Legislativa el Congreso está dividido por el Senado de la República y:",
+                opcorrect : "La Cámara de Representantes",
+                opequiv1 : "El estado y el gobierno",
+                opequiv2 : "Consejo de Estado y Corte Constitucional",
+                opequiv3 : "La Corte Suprema de Justicia" 
+            },
+            {
+                enunciado : "El Presidente lo podemos encontrar en la rama:",
+                opcorrect : "Ejecutiva",
+                opequiv1 : "Las Cortes",
+                opequiv2 : "Judicial",
+                opequiv3 : "Legislativa" 
+            },
+            {
+                enunciado : "Cual de estos es un órgano autónomo",
+                opcorrect : "Banco de la República",
+                opequiv1 : "Comisión Nacional del Servicio Civil",
+                opequiv2 : "Autoridad Nacional de Televisión",
+                opequiv3 : "DANE" 
+            },
+            {
+                enunciado : "La Corte Suprema de Justicia es...",
+                opcorrect : "Un órgano de la rama judicial",
+                opequiv1 : "Una rama del poder",
+                opequiv2 : "Una ley",
+                opequiv3 : "Una constitución" 
+            },
+            {
+                enunciado : "¿Qué elemento necesita el Estado para ser reconocido como tal",
+                opcorrect : "Población, Territorio y Poder",
+                opequiv1 : "Autonomía, Territorio e Independencia",
+                opequiv2 : "Libertad, Paz y Territorio",
+                opequiv3 : "Ramas del Poder" 
+            },
+            {
+                enunciado : "El Consejo Nacional Electoral es:",
+                opcorrect : "Órgano Electoral",
+                opequiv1 : "Parte de la Rama Legislativa",
+                opequiv2 : "Organismos de la Fiscalía",
+                opequiv3 : "Parte de la Asamblea" 
+            },
+            {
+                enunciado : "¿Qué NO hace la Corte Suprema de Justicia?",
+                opcorrect : "Consagrar matrimonios",
+                opequiv1 : "Juzgar al presidente",
+                opequiv2 : "Preparar reformas a la constitución",
+                opequiv3 : "Ser parte de la rama judicial" 
+            },
+            {
+                enunciado : "¿Quién es el jefe del Gobierno a nivel nacional?",
+                opcorrect : "El Presidente de La República",
+                opequiv1 : "Consejo de Estado",
+                opequiv2 : "Fiscal General",
+                opequiv3 : "Vicepresidente de La República" 
+            },
+            {
+                enunciado : "¿Cómo se le llama al representante de la Rama Ejecutiva a nivel municipal?",
+                opcorrect : "El Alcalde",
+                opequiv1 : "Ministros",
+                opequiv2 : "Gobernador",
+                opequiv3 : "Presidente" 
+            },
+            {
+                enunciado : "¿Quién investiga los delitos?",
+                opcorrect : "Fiscalía General de La Nación",
+                opequiv1 : "Consejo del Estado",
+                opequiv2 : "Concejo Municipal",
+                opequiv3 : "Corte Suprema de Justicia" 
+            },
+            {
+                enunciado : "De las siguientes, ¿cuál NO hace parte de la Rama Judicial?",
+                opcorrect : "Contraloría",
+                opequiv1 : "Corte Suprema de Justicia",
+                opequiv2 : "Corte Constitucional",
+                opequiv3 : "Consejo de Estado" 
+            },
+            {
+                enunciado : "¿Cómo se llama el representante de la Rama Ejecutiva a nivel nacional?",
+                opcorrect : "Presidente",
+                opequiv1 : "Alcalde",
+                opequiv2 : "Ministro",
+                opequiv3 : "Gobernador" 
+            },
+            {
+                enunciado : "Cuáles son los niveles de las Ramas del Poder Público",
+                opcorrect : "Nacional, Departamental y Municipal",
+                opequiv1 : "Congreso, Asamblea y Concejo",
+                opequiv2 : "Nivel 1, Nivel 2 y Nivel 3",
+                opequiv3 : "Altas Cortes, Tribunales y Magistrados" 
+            },
+            {
+                enunciado : "¿Cuál es el representante de la Rama Ejecutiva a nivel departamental?",
+                opcorrect : "Gobernador",
+                opequiv1 : "Alcalde",
+                opequiv2 : "Ministros",
+                opequiv3 : "Presidente" 
+            },
+            {
+                enunciado : "El órgano representativo de la Rama Legislativa a nivel nacional es...",
+                opcorrect : "Congreso",
+                opequiv1 : "Asamblea",
+                opequiv2 : "Senado",
+                opequiv3 : "Consejo" 
+            },
+            {
+                enunciado : "¿Cuál es el órgano representativo de la Rama Legislativa a nivel departamental?",
+                opcorrect : "Asamblea",
+                opequiv1 : "Senado",
+                opequiv2 : "Congreso",
+                opequiv3 : "Concejo" 
+            },
+            {
+                enunciado : "¿Cuál es el órgano representativo de la Rama Legislativa a nivel municipal?",
+                opcorrect : "Concejo",
+                opequiv1 : "Asamblea",
+                opequiv2 : "Senado",
+                opequiv3 : "Congreso" 
+            },
+            {
+                enunciado : "¿Cuál es el órgano representativo de la Rama Judicial a nivel nacional?",
+                opcorrect : "Altas Cortes",
+                opequiv1 : "Tribunales",
+                opequiv2 : "Diputados",
+                opequiv3 : "Jueces Municipales" 
+            },
+            {
+                enunciado : "¿Cómo se llaman los miembros de los tribunales?",
+                opcorrect : "Magistrados",
+                opequiv1 : "Altas Cortes",
+                opequiv2 : "Disputados", // Está mal escroto a propósito :)
+                opequiv3 : "Juez Municipal" 
+            },
+            {
+                enunciado : "¿Cuál es el representante de la Rama Judicial a nivel municipal?",
+                opcorrect : "Juez",
+                opequiv1 : "Altas Cortes",
+                opequiv2 : "Tribuna", // Está mal escroto a propósito :)
+                opequiv3 : "Diputados" 
+            },
+            {
+                enunciado : "¿Qué órganos no hacen parte de las Altas Cortes?",
+                opcorrect : "Cámara de Representantes",
+                opequiv1 : "Corte Suprema de Justicia",
+                opequiv2 : "Corte Constitucional",
+                opequiv3 : "Consejo de Estado" 
+            },
+            {
+                enunciado : "¿Cuál de los siguientes órganos NO hacen parte de la Rama Judicial?",
+                opcorrect : "Banco de La República",
+                opequiv1 : "Jurisdicción Constitucional",
+                opequiv2 : "Jurisdicciones Especiales",
+                opequiv3 : "Jurisdicción de Paz" 
+            },
+            {
+                enunciado : "¿Cuáles de los siguientes órganos hacen parte del Congreso?",
+                opcorrect : "Senado y Cámara de Representantes",
+                opequiv1 : "Jueces Municipales",
+                opequiv2 : "Alcaldes",
+                opequiv3 : "Magistrados" 
+            },
+            {
+                enunciado : "¿Cuál de los siguientes funcionarios hace parte de la Asamblea?",
+                opcorrect : "Diputados",
+                opequiv1 : "Organización Electoral",
+                opequiv2 : "Ministros",
+                opequiv3 : "Alcaldes" 
+            },
+            {
+                enunciado : "¿Cuál de las siguientes normas crea el Concejo",
+                opcorrect : "Acuerdos",
+                opequiv1 : "Ordenanzas",
+                opequiv2 : "Tribunales",
+                opequiv3 : "Presidentes" 
+            },
+            {
+                enunciado : "Los concejales hacen parte del...",
+                opcorrect : "Concejo",
+                opequiv1 : "Senado",
+                opequiv2 : "Altas Cortes",
+                opequiv3 : "Ordenanzas" 
+            },
+            {
+                enunciado : "Los diputados hacen parte de...",
+                opcorrect : "La Asamblea",
+                opequiv1 : "El Congreso",
+                opequiv2 : "Los Gobernadores",
+                opequiv3 : "La Fiscalía" 
+            },
+            {
+                enunciado : "¿Cómo se conforma la Jurisdicción Constitucional?",
+                opcorrect : "Corte Constitucional",
+                opequiv1 : "Consejo de Estado",
+                opequiv2 : "Rama Ejecutiva",
+                opequiv3 : "Ciencia Forense" 
+            },
+            {
+                enunciado : "¿Cómo se conforma la Jurisdicción de Paz?",
+                opcorrect : "Jueces de Paz",
+                opequiv1 : "La Biblia",
+                opequiv2 : "Consejo de Estado",
+                opequiv3 : "Corte Constitucional" 
+            },
+        ]
+        totpreg = preguntas.length
+        localStorage.setItem("Preguntas", JSON.stringify(preguntas));
+        localStorage.setItem("Total de Preguntas", JSON.stringify(totpreg));
+    </script>
+</body>
+</html>

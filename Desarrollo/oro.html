@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/oro.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="img/icon4.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+    <title>Oro</title>
+</head>
+<body>
+    <div class="cont-arriba">
+        <img src="img/oro1.png" class="img-trofeo">
+    </div>
+    <div id="cont-medio">
+            <span id="participante"></span>
+    </div>
+    <div id="cont-abajo">
+        <a href="podio.html" id="fin">
+            <img src="img/fled.png" alt="" srcset="" height="80px" id="imgpasar">
+        </a>
+    </div>
+
+    <script>
+        var participantes = JSON.parse(localStorage.getItem("Participantes"));
+        document.getElementById("participante").innerText = participantes[0].numpart
+        if(participantes.length < 3){
+            document.getElementById("imgpasar").src = "img/BtnSalir.png"
+            document.getElementById("fin").href = "index.html"
+            document.getElementById("imgpasar").style.width = "15%"
+        }
+    </script>
+</body>
+</html>

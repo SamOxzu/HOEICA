@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/podio.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="img/icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+    <title>Podio</title>
+</head>
+<body>
+    <div class="cont-arriba">
+        <img src="img/LogoHoeica.png" class="img-trofeo">
+        <a href="index.html">
+            <img src="img/BtnSalir.png" class="img-trofeo2">
+        </a>
+    </div>
+    <div id="cont-medio">
+            <img src="img/podio2.png" alt="" srcset="" id="podio">
+            <span id="participante"></span>
+            <span id="participante2"></span>
+            <span id="participante3"></span>
+    </div>
+
+    <script>
+        var participantes = JSON.parse(localStorage.getItem("Participantes"));
+        document.getElementById("participante").innerText = participantes[0].numpart
+        document.getElementById("participante2").innerText = participantes[1].numpart
+        document.getElementById("participante3").innerText = participantes[2].numpart
+    </script>
+</body>
+</html>

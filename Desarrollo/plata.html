@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/plata.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="img/icon3.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+    <title>Plata</title>
+</head>
+<body>
+    <div class="cont-arriba">
+        <img src="img/plata1.png" class="img-trofeo">
+    </div>
+    <div id="cont-medio">
+            <span id="participante">12</span>
+    </div>
+    <div id="cont-abajo">
+        <a href="oro.html">
+            <img src="img/fled.png" alt="" srcset="" height="80px" id="imgpasar">
+        </a>
+    </div>
+
+    <script>
+        var participantes = JSON.parse(localStorage.getItem("Participantes"));
+        document.getElementById("participante").innerText = participantes[1].numpart
+    </script>
+</body>
+</html>

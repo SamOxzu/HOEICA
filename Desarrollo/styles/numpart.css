@@ -1,0 +1,65 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: url(../img/f8.jpg);   
+    background-size: 100%;
+    display: flex;
+    align-content: center;
+}
+
+#nump{
+    display: flex;
+    align-content: center;
+    left: 32%;
+    top: 15%;
+    position: absolute;
+}
+
+#conen{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    align-content: center;
+}
+
+.encima{
+    position: absolute;
+    text-align: center;
+    height: 25%;
+    width: 50%;
+    font-size: 150%;
+    right: 50%;
+    left: 23%;
+    top: 50%;
+    background-color: #07d4b0;
+    color: rgb(74, 74, 74);
+    border-radius: 10%;
+    box-shadow: 16px 8px 16px 0 rgba(0, 0, 0, 0.699), 0 6px 20px 0 rgba(0, 0, 0, 0.699);
+}
+
+.cont-der{
+    display: block;
+    margin-left: 85%;
+    margin-right: 30%;
+}
+
+.cont-der .btn-cont{
+    margin-top: 225%;
+}
+
+input{
+    font-family:'Ultra', serif;
+}
+
+#coso{
+    font-size: large;
+}
+
+#mandao{
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    margin-top: 200%;
+}

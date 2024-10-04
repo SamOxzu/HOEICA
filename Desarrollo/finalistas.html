@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/finalistas.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="img/icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+    <title>Finalistas</title>
+</head>
+<body>
+    <div id="cont-medio">
+            <img src="img/FINI.png" alt="" srcset="" width="800px" id="participante">
+    </div>
+    <div id="cont-abajo">
+        <a href="bronce.html" id="imgpasar">
+            <img src="img/fled.png" alt="" srcset="" id="flecha">
+        </a>
+    </div>
+    <script>
+        var totpart = JSON.parse(localStorage.getItem("Total de Participantes"));
+        var participantes = JSON.parse(localStorage.getItem("Participantes"));
+
+        if (totpart >= 3) {
+            document.getElementById("imgpasar").href = "bronce.html"
+        }
+        else{
+            switch (totpart) {
+                case "1":
+                    document.getElementById("imgpasar").href = "oro.html"
+                    break;
+                case "2":
+                    document.getElementById("imgpasar").href = "plata.html"
+                    break;
+            }
+        }
+        
+        participantes.sort((a,b) => {
+            if(a.puntuacion > b.puntuacion){
+                return -1
+            }
+            if(a.puntuacion < b.puntuacion){
+                return 1
+            }
+            if(a.puntuacion == b.puntuacion){
+                return 0
+            }
+        })
+
+        localStorage.setItem("Participantes", JSON.stringify(participantes));
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: url(../img/f4.jpg);   
+    background-size: 100%;
+}
+
+.cont-medio{
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+}
+
+#participante{
+    position: absolute;
+    text-align: center;
+    width: 50%;
+    font-size: 1500%;
+    left: 26%;
+    top: 20%;
+    font-family:'Ultra', serif;
+}
+
+.cont-abajo{
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 50%;
+}
+
+#flecha{
+    left: 85%;
+    position: absolute;
+}

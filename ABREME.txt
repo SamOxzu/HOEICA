@@ -1,0 +1,4 @@
+Hola :)
+Para abrir el juego, entre en la carpeta "Desarrollo", y haga doble clic en el
+archivo "index".
+Gracias c:
